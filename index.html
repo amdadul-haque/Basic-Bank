@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Bank</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png"/>
+</head>
+<body>
+  <div class="container">
+    <section class="viewingArea">
+      <div class="card depositCard">
+        <h3>Deposit</h3>
+        <h1>&#2547
+          <span id="currentDeposit">
+            0
+          </span>
+        </h1>
+      </div>
+      <div class="card withdrawCard">
+        <h3>withdraw</h3>
+        <h1>&#2547
+          <span id="currentWithdraw">
+            0
+          </span>
+        </h1>
+      </div>
+      <div class="card balanceCard">
+        <h3>Balance</h3>
+        <h1>&#2547
+          <span id="currentBalance">
+            0
+          </span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="inputArea">
+      <div class="card">
+        <h2>deposit</h2>
+        <input id="depositAmount" type="text" value="" placeholder="enter how much want to deposit">
+        <button class="btn" id="addDepositBtn">
+          deposit
+        </button>
+      </div>
+      <div class="card">
+        <h2>withdraw</h2>
+        <input id="withdrawAmount" type="text" value="" placeholder="enter how much want to withdraw">
+        <button class="btn" id="addWithdrawBtn">
+          withdraw
+        </button>
+      </div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
