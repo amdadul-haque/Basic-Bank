@@ -2,9 +2,28 @@ var addDepositBtn = document.getElementById('addDepositBtn');
 var addWithdrawBtn = document.getElementById('addWithdrawBtn');
 var inputs = document.querySelectorAll('.inputArea input');
 
+// LOGIN PROCESS
+const loginArea = document.getElementById('loginArea');
+const mainArea = document.getElementById('mainArea');
+const loginBtn = document.getElementById('loginBtn');
+
+loginBtn.addEventListener('click', ()=>{
+  loginArea.style.display ="none";
+  mainArea.style.display ="flex";
+})
+
+// DOMCONTENT LOADED
+document.addEventListener('DOMContentLoaded', ()=>{
+
+
+  console.log(localStorage.getItem('currentDeposit'));
+
+  updateSpanText('currentDeposit', parseInt(localStorage.getItem('currentDeposit')) || 0 )
+  updateSpanText('currentWithdraw', parseInt(localStorage.getItem('currentWithdraw')) || 0 )
+  updateSpanText('currentBalance', parseInt(localStorage.getItem('currentBalance')) || 0 )
+})
 // CLICK THE DEPOSIT OR WITHDRAW BUTTON VIA ENTER KEY
 inputs.forEach( (input)=>{
-
   input.addEventListener('keyup', (e)=> {
     e.preventDefault();
     if(e.keyCode === 13){ //enter key
@@ -22,6 +41,7 @@ addDepositBtn.addEventListener('click', ()=>{
   // console.log(depositAmount+5);
   updateSpanText('currentDeposit',depositAmount);
   updateSpanText('currentBalance',depositAmount);
+  updateFromLocalStorage();
 })
 //WITHDRAW BUTTON EVENT HANDLER
 addWithdrawBtn.addEventListener('click', ()=>{
@@ -30,6 +50,7 @@ addWithdrawBtn.addEventListener('click', ()=>{
   // console.log(depositAmount+5);
   updateSpanText('currentWithdraw',withdrawAmount);
   updateSpanText('currentBalance',-1 * withdrawAmount);
+  updateFromLocalStorage();
 })
 
 //FUNCTION TO GET AMOUNT WANTED TO DEPOSIT OR WITHDRAW
@@ -52,10 +73,11 @@ function getCurrentAmount(id){
 }
 
 //FUNCTION TO UPDATE THE TEXT IN THE VIEWING SECTION (DEPOSIT,WITHDRAW & BALANCE)
+var updatedAmount;
 function updateSpanText(id, amount){
   var spanText = document.getElementById(id);
   var currentAmount = parseFloat(spanText.innerText);
-  var updatedAmount = currentAmount + amount;
+  updatedAmount = currentAmount + amount;
   spanText.innerText = updatedAmount;
 }
 
@@ -79,5 +101,13 @@ function amountVerification(id,amount){
   }
   return true;
 }
-
-
+/======= UPDATE TO LOCAL STORAGE  ======= */
+function updateFromLocalStorage(){
+  let LSDepositAmount = getCurrentAmount('currentDeposit');
+  let LSWithdrawAmount = getCurrentAmount('currentWithdraw');
+  let LSBalanceAmount = getCurrentAmount('currentBalance');
+  localStorage.setItem("currentDeposit", LSDepositAmount);
+  localStorage.setItem("currentWithdraw", LSWithdrawAmount);
+  localStorage.setItem("currentBalance", LSBalanceAmount);
+  console.log(LSDepositAmount);
+}

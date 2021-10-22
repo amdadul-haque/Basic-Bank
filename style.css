@@ -1,3 +1,4 @@
+/*========     GLOBAL STYLE     ==========*/
 *{
   margin: 0;
   padding: 0;
@@ -11,7 +12,62 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+} 
+input{
+  height: 1.5rem;
+  font-size: 1.3rem;
+  margin: .5rem 0;
+  transition: 0.3S ease-in-out;
 }
+input:focus{
+  box-shadow: 0 0 5px 2px hsla(200,50%,50%);
+}
+.btn{
+  display: inline-flex;
+  background-color: hsl(150,50%,50%);
+  color: white;
+  font-size: 1.2rem;
+  width: 7rem;
+  border: 3px solid hsl(150,50%,50%);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: .2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  font-family:Arial, Helvetica, sans-serif
+}
+.btn:hover{
+  background-color: #fff;
+  color: hsl(150,50%,50%);
+  border: 3px solid hsl(150,50%,50%);
+}
+/*=======  MODAL AREA   ==================*/
+#modal{
+  height: 100%;
+  width: 100%;
+  border: 2px solid #444;
+  position: absolute;
+  background-color: rgb(0,0,0);
+}
+/*=========    LOGIN AREA      ===========*/
+#loginArea{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 1rem; 
+  border: 2px solid #444;
+  box-shadow: 0 0 10px 0px #666;
+}
+#loginArea input{
+  text-transform: lowercase;
+}
+#loginArea input:placeholder-shown{
+  text-transform: Capitalize;
+}
+
+/*========                  =============*/
 .container{
   height: 80%;
   width: 80%;
@@ -20,8 +76,11 @@ body{
   align-items: center;
   flex-direction: column;
   /* border: dashed; */
+  display: none;
 }
-
+header h1{
+  margin-bottom:3rem;
+}
 .viewingArea{
   width: 100%;
   display: flex;
@@ -55,7 +114,6 @@ body{
   font-size: 3rem;
 }
 
-
 .inputArea{
   display: flex;
   justify-content: space-between;
@@ -70,33 +128,4 @@ body{
   font-size: 2rem;
   margin: .5rem 0;
 }
-.inputArea input{
-  height: 1.5rem;
-  font-size: 1.3rem;
-  margin: .5rem 0;
-  transition: 0.3S ease-in-out;
-}
-.inputArea input:focus{
-  box-shadow: 0 0 5px 2px hsla(200,50%,50%);
-}
-.inputArea .btn{
-  display: inline-flex;
-  background-color: hsl(150,50%,50%);
-  color: white;
-  font-size: 1.2rem;
-  width: 7rem;
-  border: 3px solid hsl(150,50%,50%);
-  border-radius: 5px;
-  cursor: pointer;
-  padding: .2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-  font-family:Arial, Helvetica, sans-serif
-}
-.inputArea .btn:hover{
-  background-color: #fff;
-  color: hsl(150,50%,50%);
-  border: 3px solid hsl(150,50%,50%);
-}
+

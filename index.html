@@ -9,7 +9,15 @@
   <link rel="icon" type="image/png" href="img/favicon-16x16.png"/>
 </head>
 <body>
-  <div class="container">
+  <div id="loginArea">
+    <input type="text" placeholder="email or username">
+    <input type="password" placeholder="password">
+    <button id="loginBtn" class="btn">login</button>
+  </div>
+  <div id="mainArea" class="container">
+    <header>
+      <h1>Welcome back Mr.Amdaddul</h1>
+    </header>
     <section class="viewingArea">
       <div class="card depositCard">
         <h3>Deposit</h3>
@@ -22,7 +30,7 @@
       <div class="card withdrawCard">
         <h3>withdraw</h3>
         <h1>&#2547
-          <span id="currentWithdraw">
+          <span id="currentWithdraw"> 
             0
           </span>
         </h1>
@@ -53,6 +61,9 @@
         </button>
       </div>
     </section>
+  </div>
+  <div id="modal">
+    
   </div>
   <script src="app.js"></script>
 </body>
