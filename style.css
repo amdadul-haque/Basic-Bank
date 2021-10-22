@@ -44,13 +44,13 @@ input:focus{
   border: 3px solid hsl(150,50%,50%);
 }
 /*=======  MODAL AREA   ==================*/
-#modal{
+/* #modal{
   height: 100%;
   width: 100%;
   border: 2px solid #444;
   position: absolute;
   background-color: rgb(0,0,0);
-}
+} */
 /*=========    LOGIN AREA      ===========*/
 #loginArea{
   width: 400px;
